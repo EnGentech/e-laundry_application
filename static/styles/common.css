@@ -1,0 +1,35 @@
+.background{
+    width: 100%;
+    height: 800px;
+    background:linear-gradient(-5deg, rgb(239, 240, 246) 30%, rgb(207, 240, 230) 30%);
+}
+
+.footer{
+    height: 40px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-top: 2px solid rgb(71, 70, 70);
+    background-color: azure;
+}
+
+.footer p{
+    font-size: smaller;
+    float: right;
+    margin-top: 8px;
+    margin-right: 50px;
+    font-style: italic;
+}
+
+.footer img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-top: 5px;
+    display: inline;
+}
+
+.links{
+    margin-left:45%;
+    word-spacing: 30px;
+}

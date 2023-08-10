@@ -1,0 +1,110 @@
+.name{
+    padding-left: 50px;
+    padding-top: 40px;
+    line-height: 10px;
+    color: rgb(30, 8, 80);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.name h3{
+    font-style: italic;
+}
+
+.side_img img{
+    display: flex;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    margin-left: 10%;
+}
+
+.sign_in{
+    display: flex;
+    float:right;
+}
+
+.form_pane{
+    border: 2px solid rgb(167, 100, 100);
+    height: 500px;
+    width: 400px;
+    margin-right: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    line-height: 30px;
+    background-color: whitesmoke;    
+}
+
+.form_pane h4{
+    background-color: rgb(100, 157, 167);
+    margin: 0px;
+    width: 100%;
+    height: 50px;
+    color:white;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 45px;
+    border-bottom: 5px solid black
+}
+
+.form_pane input[type='text']{
+    width: 100%;
+}
+
+.form_pane input[type='password']{
+    width: 100%;
+}
+
+.form_pane input[type='submit'], input[type='button']{
+    border-radius: 15px;
+    border: 1px solid rgb(95, 136, 139);
+    color: rgb(44, 26, 26);
+    font-weight: bolder;
+    background-color: rgb(95, 136, 139);
+    padding-right: 50%;
+}
+
+.but{
+    display: flex;
+    color: rgb(44, 26, 26);
+    text-align: center;
+}
+
+.but_nwUser{
+    width: 50%;
+}
+
+.but_nwUser input[type='submit']{
+   
+}
+
+.but_signup{
+    width: 50%;
+}
+
+.form_pane input[type='submit']:hover, input[type='button']:hover{
+    color:white;
+    border-bottom: 5px solid black;
+}
+
+.form_pane p{
+    font-size: x-small;
+    text-align: center;
+}
+
+.form_pane img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 35%;
+}
+
+label[for='Login'], label[for='signup']{
+    font-size: small;
+}
+
+#red{
+    color:red;
+}

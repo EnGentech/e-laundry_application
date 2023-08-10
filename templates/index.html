@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block header %}
+    <link rel="stylesheet" href="/static/styles/index.css">
+{% endblock %}
+
+{% block content %}
+<div class="background">
+   <div class="name">
+    <h1>e_laundry Service</h1>
+    <h3>Spackle Laundry</h3>
+   </div>
+   
+   <div class="sign_in">
+        <div class="form_pane">
+            <form action="{{ url_for('home') }}" method="POST">
+                    <h4>Log me in Sparkle Laundry</h4>
+                    <br>
+                    <img src="/static/images/logo.jpg" alt=""><br>
+                    <label for="userName">User Name:</label><br>
+                    <input type="text" name="userName" id="userName" placeholder="Enter UserName">
+                    <br><br>
+                    <label for="password">Password:</label><br>
+                    <input type="password" name="password" id="password" placeholder="Enter Password">
+
+                    {% if invalid %}
+                        <p id="red">{{ invalid }}</p>
+                    {% else %}
+                        <br><br>
+                    {% endif %}
+                    
+                    <div class="but">
+                        <div class="but_nwUser">
+                            <label for="Login">Already Registered?</label><br>
+                            <input type="submit" name="Login" id="" value="Login"><br>
+                        </div>
+                        <div class="but_signup">
+                            <label for="signup">New User</label><br>
+                            <a href="{{ url_for('signup') }}"><input type="button" name="signup" id="signup" value="Sign Up"></a>
+                        </div>
+                    </div>
+                    <p>>>> Thank you for trusting us <<<</p>
+            </form>
+        </div>
+   </div>
+   <div class="side_img">
+    <img src='{{ url_for ("static", filename="images/background.jpg") }}' alt="laundry view">
+</div>
+
+
+{% endblock %}
