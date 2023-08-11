@@ -2,6 +2,8 @@
 {% block header %}
     <link rel="stylesheet" href="/static/styles/index.css">
     <link rel="stylesheet" href="/static/styles/sign_up.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/scripts/signup.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -27,7 +29,7 @@
                     <br><br>
                     <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Enter active Phone Number" required>
                     <br><br>
-                    <input type="submit" name="Login" id="" value="Submit">
+                    <input type="submit" name="Login" id="register" value="Submit">
                     <p>{{ error }}</p>
                     <p>you have signed up already: <a href="{{ url_for('home')}}">sign_in</a></p>
             </form>

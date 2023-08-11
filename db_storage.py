@@ -15,7 +15,6 @@ class Storage:
     def validate_user(user):
         """Check if user already exist in the database"""
         verify = session.query(User).filter_by(name=user).first()
-        print(verify)
         if verify:
             return "found"
         
