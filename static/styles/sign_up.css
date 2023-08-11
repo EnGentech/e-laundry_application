@@ -17,14 +17,14 @@
 }
 
 .form_pane{
-    border: 2px solid rgb(167, 100, 100);
+    border: 2px solid white;
     height: 580px;
     width: 400px;
     margin-right: 100px;
     padding: 20px;
     border-radius: 10px;
     line-height: 30px;
-    background-color: whitesmoke;    
+    background-color: #e2e9e1;      
 }
 
 .form_pane input[type='submit']{
