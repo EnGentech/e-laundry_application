@@ -1,0 +1,83 @@
+body{
+    background-color: rgb(247, 247, 236) !important;
+    margin: 3px !important;
+}
+
+.head_container{
+    margin: 0%;
+    margin-top: 0.5%;
+}
+
+.head_container img{
+    border-radius: 50%;
+    float:left;
+    width: 350px;
+    height: 350px;
+    margin-left: 5%;
+}
+
+.head_writeup{
+    text-align: center;
+    line-height: 2em;
+    font-size: 1.2em;
+    background-color: black;
+    border-radius: 5px;
+    height: 350px;
+}
+
+.head_writeup h2{
+    color:#faf9fa;font-size: 3em;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-color: #fff59c;
+}
+
+.head_writeup p, h2{
+    color: #faf9fa;
+    font-weight: 400;
+}
+
+.whyUs{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    line-height: 2em;
+}
+
+.whyUs_text{
+    margin-left: 10%; 
+    color: rgb(9, 1, 51);
+    font-weight: 400;
+}
+
+.whyUs_text h2{
+    color: rgb(16, 0, 94)
+}
+
+.whyUs img{
+    border-radius: 5%;
+    margin-left: 2%;
+}
+
+.side{
+    border: 5px solid black;
+    height: 200px;
+    margin-top: 10%;
+    margin-left: 2%;
+    border-radius: 10%;
+    text-align: center;
+    
+    width: 300px;
+    border-right-color: white;
+}
+
+.side h3{
+    margin-top: 10%;
+    font-style: italic;
+    text-decoration: underline;
+    color: rgb(195, 1, 1);
+}
+
+.side span{
+    
+}

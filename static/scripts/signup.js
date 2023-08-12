@@ -22,6 +22,7 @@ $(document).ready(function(){
             $('#register').prop('disabled', false)
             $('#register').css('background-color', '').css('color','')
             $('#register').css('background-color', '')
+            $('#register').val('Submit')
         }
     }
 });
