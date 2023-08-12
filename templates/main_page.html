@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="/static/styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/11285bfb5b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/scripts/main.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -47,4 +49,133 @@
         </div>
     </div>
     <hr>
+    <div class="our_services">
+        <h2>Our  Services</h2>
+        <p>We offer you the best experience you could ever think of <br>
+        Engage us for a any of the underlisted services <br>
+        We deliver satisfaction</p>
+        <div class="service_items">
+            <div class="items">
+                <img src="/static/images/washing.jpeg" alt="suits cleaning services" id="wash">
+                <p>Washing</p>
+                <button class="button" id="button1">Check out</button>
+                <div class="dropme_wash">
+                    <table>
+                        <thead>
+                            <td>Select item</td>
+                            <td>Items</td>
+                            <td>Price</td>
+                            <td>QTY</td>
+                            <td>Pay</td>
+                        </thead>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Jean</td>
+                            <td>$10</td>
+                            <td><input type="text" style="width: 50px;"></td>
+                        </tr>
+                        <tr>
+                            <td>Beddings</td>
+                            <td>$25</td>
+                        </tr>
+                        <tr>
+                            <td>Co-operate wears</td>
+                            <td>$15</td>
+                        </tr>
+                        <tr>
+                            <td>Wedding dresses</td>
+                            <td>$35</td>
+                        </tr>
+                        <tr>
+                            <td>Duvets</td>
+                            <td>$20</td>
+                        </tr>
+                        <tr>
+                            <td>Cottons</td>
+                            <td>$8</td>
+                        </tr>
+                    </table>
+                </div>    
+            </div>
+            <div class="items">
+                <img src="/static/images/stain-removal.jpg" alt="stain removal" id="stain">
+                <p>Stain Removal</p>
+                <button class="button" id="button2">Check out</button>
+                <div class="dropme_stains">
+                    <table>
+                        <thead>
+                            <td>Items</td>
+                            <td>Price Tag per QTY</td>
+                        </thead>
+                        <tr>
+                            <td>Jean</td>
+                            <td>$25</td>
+                        </tr>
+                        <tr>
+                            <td>Beddings</td>
+                            <td>$40</td>
+                        </tr>
+                        <tr>
+                            <td>Co-operate wears</td>
+                            <td>$30</td>
+                        </tr>
+                        <tr>
+                            <td>Wedding dresses</td>
+                            <td>$55</td>
+                        </tr>
+                        <tr>
+                            <td>Duvets</td>
+                            <td>$28</td>
+                        </tr>
+                        <tr>
+                            <td>Cottons</td>
+                            <td>$18</td>
+                        </tr>
+                    </table>
+                </div>    
+            </div>
+            <div class="items">
+                <img src="/static/images/ironing.jpeg" alt="ironing" id="iron">
+                <p>Ironing</p>
+                <button class="button" id="button3">Check out</button>
+                <div class="dropme_iron">
+                    <table>
+                        <thead>
+                            <td>Items</td>
+                            <td>Price Tag per QTY</td>
+                        </thead>
+                        <tr>
+                            <td>Jean</td>
+                            <td>$2</td>
+                        </tr>
+                        <tr>
+                            <td>Beddings</td>
+                            <td>free</td>
+                        </tr>
+                        <tr>
+                            <td>Co-operate wears</td>
+                            <td>free</td>
+                        </tr>
+                        <tr>
+                            <td>Wedding dresses</td>
+                            <td>$5</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="space"></div>
+            <div class="items">
+                <img src="/static/images/home_service.jpeg" alt="home_services" id="home_service">
+                <p>Home Service</p>
+            </div>
+            <div class="items">
+                <img src="/static/images/special_engagement.png" alt="special" id="engagement">
+                <p>Special Engagement</p>
+            </div>
+            <div class="items">
+                <img src="/static/images/wash.jpeg" alt="special" id="general_contract">
+                <p>General Contract</p>
+            </div>
+        </div>
+    </div>
  {% endblock %}
