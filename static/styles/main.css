@@ -32,6 +32,19 @@ body{
     text-decoration-color: #fff59c;
 }
 
+.head_writeup h3{
+    position: absolute;
+    right: 0;
+    color:red;
+    background-color: white;
+    width: 200px;
+    border-bottom-left-radius: 40%;
+    border-top-left-radius: 40%;
+    border-right: 2px solid black;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
 .head_writeup p, h2{
     color: #faf9fa;
     font-weight: 400;
@@ -168,4 +181,69 @@ table tr, td{
 thead{
     font-weight: bold;
     color: brown;
+}
+
+.dropme_wash .hide, .dropme_stains .hide, .dropme_iron .hide{
+    display: none;
+}
+
+.submitPay{
+    border: none;
+    border-radius: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color:navy;
+    font-weight: light;
+}
+
+.submitPay:hover{
+    color:red;
+    border-bottom: 2px solid black;
+}
+
+.proceed{
+    height:50px;
+    width: 100%;
+    background-color: black;
+}
+
+.proceed span{
+    color:white;
+    font-size: 0.8em;
+    margin-left: 20%;
+}
+
+.proceed button{
+    border-top-right-radius: 40%;
+    border-bottom-right-radius: 40%;
+    padding-right: 20px;
+    font-size: 0.9em;
+    padding-top: 4px;
+    color:red;
+}
+
+.proceed button:hover{
+    color:white;
+    background-color: red;
+}
+
+.noSelection{
+    text-align: left !important;
+    margin-left: 5%;
+    color:red;
+    position:absolute;
+}
+
+.payTotal{
+    position: absolute;
+    margin-left:5%;
+    color:green;
+}
+
+.bankDetails{
+    position: absolute;
+    background-color: grey;
+    font-size: small;
+    border-radius: 15px;
+    display:none;
 }

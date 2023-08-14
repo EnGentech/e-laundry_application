@@ -6,12 +6,23 @@
     <script src="https://kit.fontawesome.com/11285bfb5b.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/static/scripts/main.js"></script>
+    <script src="/static/scripts/logout_main.js"></script>
+    <link rel="stylesheet" href="/static/styles/logout.css">
+    <script src="/static/scripts/submit_pay.js"></script>
+    <script src="/static/scripts/proceed_payment.js"></script>
 {% endblock %}
 
 {% block content %}
     <div class="head_container">
         <img src="/static/images/logo.jpg" alt="">
         <div class="head_writeup">
+            <h3>Logout</h3>
+            <div class="confirm">
+                <h4>Are you certian?</h4><br>
+                <a href="{{ url_for('pop_user')}}"><button>confirm</button></a>
+                <a href=""><button>Cancel</button></a>
+            </div>
+            <br>
             <h2>Sparkle Laundry Service</h2><br>
             <p>Welcome to <b>Sparkle Laundry Service</b>,<br>your one-stop solution for all laundry
             and dry cleaning services,<br> we understand that life is busy, and finding time for
@@ -20,7 +31,7 @@
         <hr>
     </div>
 
-    <div class="whyUs">
+    <div class="whyUs" id="pay">
         <div class="whyUs_text">  <br>    
             <h2>Why Choose Us...</h2>
             <ul>
@@ -39,11 +50,31 @@
         </div>
         <img src="/static/images/washing.jpg" alt="">
         <div class="side">
+            <h6 class="payTotal"></h6>
             <h3>Payment method</h3>
             <i class="fa-solid fa-hand-pointer fa-rotate-90"></i>   <span>&nbsp;&nbsp;
                 Pay on delivery&nbsp;&nbsp;&nbsp;</span><br>
-            <i class="fa-solid fa-money-bill-transfer"></i>  <span>&nbsp;&nbsp;
+            <i class="fa-solid fa-money-bill-transfer"></i>  <span id="bt">&nbsp;&nbsp;
                 Bank Transfer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+                <div class="bankDetails">
+                    <table>
+                        <thead>
+                            <td>Bank-Name</td>
+                            <td>Acc._Name</td>
+                            <td>Acc._Number</td>
+                        </thead>
+                        <tr>
+                            <td>Opay</td>
+                            <td>Iberedem Inyang</td>
+                            <td>8039678842</td>
+                        </tr>
+                        <tr>
+                            <td>First Bank</td>
+                            <td>Iberedem Inyang</td>
+                            <td>3053040115</td>
+                        </tr>
+                    </table>
+                </div>
             <i class="fa-solid fa-credit-card"></i>  <span>&nbsp;&nbsp;<a href="{{ url_for('e_payment') }}">
                 Online Payment</a>&nbsp;&nbsp;</span>
         </div>
@@ -62,37 +93,60 @@
                 <div class="dropme_wash">
                     <table>
                         <thead>
-                            <td>Select item</td>
+                            <td>Check</td>
                             <td>Items</td>
                             <td>Price</td>
                             <td>QTY</td>
                             <td>Pay</td>
                         </thead>
                         <tr>
-                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"  class="jean"></td>
                             <td>Jean</td>
                             <td>$10</td>
-                            <td><input type="text" style="width: 50px;"></td>
+                            <td><input type="number" id='jean' min='0' style="width: 40px;"></td>
+                            <td><label class="pay_jean"></label></td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox"  class="bed"></td>
                             <td>Beddings</td>
                             <td>$25</td>
+                            <td><input type="number" id='bed' min="0" style="width: 40px;"></td>
+                            <td><label class="pay_bed"></label></td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox"  class="co"></td>
                             <td>Co-operate wears</td>
                             <td>$15</td>
+                            <td><input type="number" id='co' min="0" style="width: 40px;"></td>
+                            <td><label class="pay_co"></label></td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox"  class="wed"></td>
                             <td>Wedding dresses</td>
                             <td>$35</td>
+                            <td><input type="number" id='wed' min="0" style="width: 40px;"></td>
+                            <td><label class="pay_wed"></label></td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox"  class="dev"></td>
                             <td>Duvets</td>
                             <td>$20</td>
+                            <td><input type="number" id='dev' min="0" style="width: 40px;"></td>
+                            <td><label class="pay_dev"></label></td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox"  class="cot"></td>
                             <td>Cottons</td>
                             <td>$8</td>
+                            <td><input type="number" id='cot' min="0" style="width: 40px;"></td>
+                            <td><label class="pay_cot"></label></td>
+                        </tr>
+                        <tr>
+                            <td><button class="submitPay">Submit</button></td>
+                            <td style="font-weight: bolder" class="hide">Total</td>
+                            <td></td>
+                            <td></td>
+                            <td id="pay_now" class="hide">0</td>
                         </tr>
                     </table>
                 </div>    
@@ -104,32 +158,60 @@
                 <div class="dropme_stains">
                     <table>
                         <thead>
+                            <td>Check</td>
                             <td>Items</td>
-                            <td>Price Tag per QTY</td>
+                            <td>Price</td>
+                            <td>QTY</td>
+                            <td>Pay</td>
                         </thead>
                         <tr>
+                            <td><input type="checkbox"  class="jean"></td>
                             <td>Jean</td>
                             <td>$25</td>
+                            <td><input type="number" id='jean' min='0' style="width: 40px;"></td>
+                            <td><label class="pay_jean"></label></td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox"  class="bed"></td>
                             <td>Beddings</td>
                             <td>$40</td>
+                            <td><input type="number" id='bed' min="0" style="width: 40px;"></td>
+                            <td><label class="pay_bed"></label></td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox"  class="co"></td>
                             <td>Co-operate wears</td>
                             <td>$30</td>
+                            <td><input type="number" id='co' min="0" style="width: 40px;"></td>
+                            <td><label class="pay_co"></label></td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox"  class="wed"></td>
                             <td>Wedding dresses</td>
                             <td>$55</td>
+                            <td><input type="number" id='wed' min="0" style="width: 40px;"></td>
+                            <td><label class="pay_wed"></label></td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox"  class="dev"></td>
                             <td>Duvets</td>
                             <td>$28</td>
+                            <td><input type="number" id='dev' min="0" style="width: 40px;"></td>
+                            <td><label class="pay_dev"></label></td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox"  class="cot"></td>
                             <td>Cottons</td>
                             <td>$18</td>
+                            <td><input type="number" id='cot' min="0" style="width: 40px;"></td>
+                            <td><label class="pay_cot"></label></td>
+                        </tr>
+                        <tr>
+                            <td><button class="submitPay">Submit</button></td>
+                            <td style="font-weight: bolder" class="hide">Total</td>
+                            <td></td>
+                            <td></td>
+                            <td id="pay_now" class="hide">0</td>
                         </tr>
                     </table>
                 </div>    
@@ -141,27 +223,52 @@
                 <div class="dropme_iron">
                     <table>
                         <thead>
+                            <td>Check</td>
                             <td>Items</td>
-                            <td>Price Tag per QTY</td>
+                            <td>Price</td>
+                            <td>QTY</td>
+                            <td>Pay</td>
                         </thead>
                         <tr>
+                            <td><input type="checkbox"  class="jean"></td>
                             <td>Jean</td>
                             <td>$2</td>
+                            <td><input type="number" id='jean' min='0' style="width: 40px;"></td>
+                            <td><label class="pay_jean"></label></td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox"  class="bed"></td>
                             <td>Beddings</td>
-                            <td>free</td>
+                            <td>$free</td>
+                            <td><input type="number" id='bed' min="0" style="width: 40px;"></td>
+                            <td><label class="pay_bed"></label></td>
                         </tr>
+
                         <tr>
+                            <td><input type="checkbox"  class="co"></td>
                             <td>Co-operate wears</td>
-                            <td>free</td>
+                            <td>$free</td>
+                            <td><input type="number" id='co' min="0" style="width: 40px;"></td>
+                            <td><label class="pay_co"></label></td>
                         </tr>
                         <tr>
+                            <td><input type="checkbox"  class="wed"></td>
                             <td>Wedding dresses</td>
                             <td>$5</td>
+                            <td><input type="number" id='wed' min="0" style="width: 40px;"></td>
+                            <td><label class="pay_wed"></label></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><button class="submitPay">Submit</button></td>
+                            <td style="font-weight: bolder" class="hide">Total</td>
+                            <td></td>
+                            <td></td>
+                            <td id="pay_now" class="hide">0</td>
                         </tr>
                     </table>
                 </div>
+                
             </div>
             <div class="space"></div>
             <div class="items">
@@ -176,6 +283,11 @@
                 <img src="/static/images/wash.jpeg" alt="special" id="general_contract">
                 <p>General Contract</p>
             </div>
+        </div>
+        
+        <div class="proceed">
+            <h5><a href="#engagement"><button>Proceed to payment</button></a><span style="text-align: center;">
+            </span></h5>
         </div>
     </div>
  {% endblock %}

@@ -1,0 +1,29 @@
+.confirm{
+    position: absolute;
+    right: 0;
+    margin-top: 3%;
+    background-color: white;
+    margin-right:10px;
+    padding: 1.5%;
+    border-radius: 10%;
+    display: none;
+}
+
+.confirm a button{
+    font-size: medium;
+    height: 30px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+}
+
+.confirm h4{
+    font-size: large;
+    color:blue;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.confirm button:hover{
+    color:red;
+}

@@ -76,6 +76,12 @@ def e_payment():
     """Render e_payment service"""
     return render_template('service_in_progress.html')
 
+@app.route('/home/logout')
+@login_required
+def pop_user():
+    """Remove present user"""
+    session.pop('userName', None)
+    return redirect(url_for('home'))
 
 if __name__ == "__main__":
     app.run(debug=True)
