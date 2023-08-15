@@ -1,7 +1,7 @@
 from users import User
 from sql_connect import session
 from run_web_service import app, request, Bcrypt
-from werkzeug.security import check_password_hash #this is used to enhance security check in database
+#from werkzeug.security import check_password_hash #this is used to enhance security check in database
 
 class Storage:
     """Storage Card definition"""

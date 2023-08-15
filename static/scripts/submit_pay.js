@@ -72,9 +72,11 @@ $(document).ready(function(){
             $('.payTotal').text('')
         }else if (total > 0){
             document.querySelector('.proceed button').disabled = false;
-            $('.proceed span').text('Please confirm you selection above before proceeding to payment')
+            $('.proceed span').text('Please confirm your selection above before proceeding to payment')
             $('.proceed a').attr('href', '#pay')
             $('.payTotal').text('Pay Now => $' + total)
+            $('#bt').css('cursor', 'pointer')
+            $('#bt').css('color', 'blue')
             displayBankDetails()
         }
         

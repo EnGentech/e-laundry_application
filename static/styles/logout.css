@@ -27,3 +27,7 @@
 .confirm button:hover{
     color:red;
 }
+
+.nav-item a{
+    text-decoration: none;
+}
